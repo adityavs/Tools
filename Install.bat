@@ -147,8 +147,9 @@ mklink /J "%C2C_MOD_DIR%\Assets" Assets
 mklink /J "%C2C_MOD_DIR%\PrivateMaps" PrivateMaps
 mklink /J "%C2C_MOD_DIR%\Resource" Resource
 
-echo 4. Copying files ...
+echo 4. Copying config files ...
 copy Caveman2Cosmos.ini "%C2C_MOD_DIR%"
+copy "Caveman2Cosmos Config.ini" "%C2C_MOD_DIR%"
 
 :: Write a back pointer so we know where the SVN repo is
 echo %cd%>"%C2C_MOD_DIR%\svn_directory.txt"
