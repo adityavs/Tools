@@ -91,22 +91,9 @@ if exist "..\..\..\Civ4BeyondSword.exe" (
 
 echo 1. Locate Mods directory ...
 
-:: This is only used in the if block below, but needs to be here because otherwise it is a syntax error!
-set "psCommand="(new-object -COM 'Shell.Application')^
-.BrowseForFolder(0,'Please select your Beyond the Sword Mods folder',0,0).self.path""
-
-:: Iinstall dir not set, ask the user for it
+:: Install dir not set, ask the user for it
 if not exist mods_directory.txt (
-    :: from https://stackoverflow.com/a/15885133
-    for /f "usebackq delims=" %%I in (`powershell %psCommand%`) do set "folder=%%I"
-    setlocal enabledelayedexpansion
-    if "!folder!"=="" ( 
-        echo No folder selected, install cancelled!
-        pause
-        exit /B 1 
-    )
-    :: Save the selected directory for use later!
-    echo !folder!>mods_directory.txt
+    GetDirectory "Please select your Beyond the Sword Mods directory" >mods_directory.txt
 ) else (
     echo Using Mods directory saved from previous run of this script ...
 )
