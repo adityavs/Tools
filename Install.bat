@@ -138,7 +138,6 @@ echo 4. Copying config files ...
 copy "Caveman2Cosmos.ini" "%C2C_MOD_DIR%"
 copy "Caveman2Cosmos Config.ini" "%C2C_MOD_DIR%"
 copy "Launch C2C.bat" "%C2C_MOD_DIR%"
-copy "CvAltRoot.py" "%C2C_MOD_DIR%"
 
 :: Write a back pointer so we know where the SVN repo is
 echo %cd%>"%C2C_MOD_DIR%\svn_directory.txt"
